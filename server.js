@@ -32,7 +32,7 @@ var waitinglistArray = [
 
 //ROUTES
 app.get('/', function (req, res) {
-    res.sendFile(path.join(__dirname, 'home.html'))
+    res.sendFile(path.join(__dirname, 'index.html'))
 });
 
 app.get('/api/tables', function (req, res) {
