@@ -13,6 +13,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
     />
+    <script src="https://code.jquery.com/jquery.js"></script>
   </head>
   <body>
     <div class="container">
@@ -20,8 +21,7 @@
             <div class="col s6 offset-s3 center-align">
                 <h2>Hella Cool Cafe <i class="material-icons">brightness_2</i></h2>
                 <h4>Book reservation right now!</h4>
-                <a class=" btn waves-effect amber"><i class="material-icons left">local_dining</i>View Tables</a>
-                <a class="btn waves-effect amber"><i class="material-icons right">free_breakfast</i>Make Reservation</a>
+                <a href="./reservation" class="btn waves-effect amber"><i class="material-icons right">free_breakfast</i>Make Reservation</a>
             </div>
         </div>
     </div>
@@ -111,6 +111,11 @@
     </div>
 
     <!--JavaScript at end of body for optimized loading-->
+    <script type="text/javascript">
+      $("#resrve").on("click", () => {
+
+      })
+    </script>
     <!-- <script type="text/javascript" src="js/materialize.min.js"></script> -->
   </body>
 </html>
