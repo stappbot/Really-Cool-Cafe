@@ -1,6 +1,7 @@
 var express = require('express');
 var path = require('path');
 
+
 var app = express();
 var PORT = process.env.PORT || 3001;
 
@@ -39,8 +40,8 @@ app.get('/tables', function (req, res) {
     res.sendFile(path.join(__dirname, 'tables.html'))
 });
 
-app.get('/reservations', function (req, res) {
-    res.sendFile(path.join(__dirname, 'reservations.html'))
+app.get('/reservation', function (req, res) {
+    res.sendFile(path.join(__dirname, 'reservation.html'))
 });
 
 //API ROUTES

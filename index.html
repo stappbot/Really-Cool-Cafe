@@ -11,6 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
+<script src="https://code.jquery.com/jquery.js"></script>
 </head>
 
 <body>
@@ -20,14 +21,91 @@
                 <h2>Hella Cool Cafe <i class="material-icons">brightness_2</i></h2>
                 <h4>Book reservation right now!</h4>
                 <a class=" btn waves-effect amber"><i class="material-icons left">local_dining</i>View Tables</a>
-                <a class="btn waves-effect amber"><i class="material-icons right">free_breakfast</i>Make Reservation</a>
+                <a href="./reservation" class="btn waves-effect amber"><i
+                        class="material-icons right">free_breakfast</i>Make Reservation</a>
             </div>
         </div>
     </div>
 
     <div class="container">
         <div class="row">
-            <div class="col s6 offset-s3">
+            <div class="col s10 offset-s1">
+                <div class="teal lighten-4 black-text">Current Reservations</div>
+                <div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Table Number: </th>
+                                <th>ID: </th>
+                                <th>Name: </th>
+                                <th>Email: </th>
+                                <th>Phone: </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>#1</td>
+                                <td>Magic</td>
+                                <td>Lady</td>
+                                <td>magic_lady@gmail.com</td>
+                                <td>666-666-6666</td>
+                            </tr>
+                            <tr>
+                                <td>#2</td>
+                                <td>She</td>
+                                <td>Ra</td>
+                                <td>sheraisbetterthanhemananyday@gmail.com</td>
+                                <td>777-234-9876</td>
+                            </tr>
+                            <tr>
+                                <td>#3</td>
+                                <td>Joan</td>
+                                <td>Didion</td>
+                                <td>imreallyserious@yahoo.com</td>
+                                <td>510-345-0987</td>
+                            </tr>
+                            <tr>
+                                <td>#4</td>
+                                <td>Meryl</td>
+                                <td>Streep</td>
+                                <td>academyawardwinner@hotmail.com</td>
+                                <td>310-444-0912</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="teal lighten-4 black-text">Waiting List</div>
+                <div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Table Number: </th>
+                                <th>ID: </th>
+                                <th>Name: </th>
+                                <th>Email: </th>
+                                <th>Phone: </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>#1</td>
+                                <td>Magic</td>
+                                <td>Lady</td>
+                                <td>magic_lady@gmail.com</td>
+                                <td>666-666-6666</td>
+                            </tr>
+                            <tr>
+                                <td>#2</td>
+                                <td>She</td>
+                                <td>Ra</td>
+                                <td>sheraisbetterthanhemananyday@gmail.com</td>
+                                <td>777-234-9876</td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
 
             </div>
         </div>
