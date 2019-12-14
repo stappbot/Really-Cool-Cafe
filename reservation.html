@@ -7,6 +7,7 @@
     <title>Really Cool Cafe</title>
     <link rel="stylesheet" type="text/css" href="style.css" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     </head>
     <link
@@ -58,7 +59,7 @@
       
       <div class="row">
         <div class="col s8">
-          <button class="btn waves-effect waves-light teal lighten-4 black-text" type="submit" name="action">Submit
+          <button id="send" class="btn waves-effect waves-light teal lighten-4 black-text" type="submit" name="action">Submit
             <i class="material-icons right">send</i>
             </button>
         </div>
@@ -74,6 +75,22 @@
     </div>
 
     <!--JavaScript at end of body for optimized loading-->
+
+    <script type="text/javascript">
+    
+      $("#send").on("click", () => {
+        event.preventDefault();
+        var newReservation = {
+        customerName: $("#first_name").val().trim(),
+        customerEmail: $("#email").val().trim(),
+        customerID: $("#uniqueId").val().trim(),
+        phoneNumber: $("#phone").val().trim()
+        }
+        console.log(newReservation)
+      });
+
+    </script>
+
     <!-- <script type="text/javascript" src="js/materialize.min.js"></script> -->
   </body>
 </html>
