@@ -1,0 +1,26 @@
+{
+  "name": "Really-Cool-Cafe",
+  "version": "1.0.0",
+  "description": "Allows users to make reservations",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "watch": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stappbot/Really-Cool-Cafe.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/stappbot/Really-Cool-Cafe/issues"
+  },
+  "homepage": "https://github.com/stappbot/Really-Cool-Cafe#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "nodemon": "^2.0.2"
+  }
+}
