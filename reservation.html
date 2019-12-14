@@ -20,10 +20,10 @@
       <div class="col s6 offset-s3 center-align">
         <h2>Hella Cool Cafe <i class="material-icons">brightness_2</i></h2>
         <h4>Book reservation right now!</h4>
-        <a class=" btn waves-effect amber"><i class="material-icons left">local_dining</i>View Tables</a>
-        <a class="btn waves-effect amber"><i class="material-icons right">home</i></a>
+        <a href="./" class="btn waves-effect amber"><i class="material-icons right">home</i></a>
       </div>
     </div>
+  </div>
   </div>
 
   <div class="container">
@@ -55,17 +55,18 @@
             <label for="uniqueId">Unique ID</label>
           </div>
         </div>
-
-        <div class="row">
-          <div class="col s8">
-            <button id="send" class="btn waves-effect waves-light teal lighten-4 black-text" type="submit"
-              name="action">Submit
-              <i class="material-icons right">send</i>
-            </button>
-          </div>
-        </div>
-      </form>
     </div>
+
+    <div class="row">
+      <div class="col s8">
+        <button id="send" class="btn waves-effect waves-light teal lighten-4 black-text" type="submit"
+          name="action">Submit
+          <i class="material-icons right">send</i>
+        </button>
+      </div>
+    </div>
+    </form>
+  </div>
 
 
 
@@ -86,7 +87,21 @@
         customerID: $("#uniqueId").val().trim(),
         phoneNumber: $("#phone").val().trim()
       }
-      console.log(newReservation)
+      console.log(newReservation);
+
+      $.post('/api/tables', newReservation, function (data) {
+        if (data) {
+          console.log('Booked a reservation!');
+        }
+        else {
+          console.log('Sorry! You are waitlisted.');
+        }
+
+        $('#first_name').val(' ');
+        $('#email').val(' ');
+        $('#uniqueId').val(' ');
+        $('#phone').val(' ');
+      })
     });
 
   </script>

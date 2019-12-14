@@ -52,3 +52,13 @@ app.get('/api/tables', function (req, res) {
 app.get('/api/waitingList', function (req, res) {
     res.json();
 });
+
+//POST DATA
+app.post('/api/tables', function (req, res) {
+    //console.log(req.body);
+
+    tableArray.push(req.body);
+    //response turns into JSON object
+    res.json(true);
+    console.log(tableArray);
+})
