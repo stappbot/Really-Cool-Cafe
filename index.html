@@ -81,7 +81,7 @@
                     console.log(response);
 
                     for (var i = 0; i < response.length; i++) {
-                        var tableList = $('#tableList')
+                        var tableList = $('#tableList');
 
                         var listItem = $('<tr>');
 
@@ -98,7 +98,34 @@
                 })
         }
 
+        function runWaitList() {
+            $.ajax({
+                url: '/api/waitingList',
+                method: 'GET'
+            })
+                .then(function (waitListData) {
+                    console.log(waitListData);
+
+                    for (var i = 0; i < waitListData.length; i++) {
+                        var waitList = $('#waitList');
+
+                        var listItem = $('<tr>');
+
+                        listItem.append(
+                            $('<th>').text('#' + (i + 1)),
+                            $('<th>').text(waitListData[i].customerID),
+                            $('<th>').text(waitListData[i].customerName),
+                            $('<th>').text(waitListData[i].customerEmail),
+                            $('<th>').text(waitListData[i].phoneNumber),
+                        )
+
+                        waitList.append(listItem);
+                    }
+                })
+        }
+
         displayTables();
+        runWaitList();
 
         function clearData() {
             alert('Clearing reservations...');
