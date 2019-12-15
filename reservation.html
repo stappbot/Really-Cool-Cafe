@@ -91,19 +91,30 @@
         }
         console.log(newReservation);
 
-        $.post('/api/tables', newReservation, function (data) {
-          if (data) {
-            alert('Booked a reservation!');
-          }
-          else {
-            alert('Sorry! You are waitlisted.');
-          }
+        var l = newReservation.customerName;
+        var m = newReservation.customerEmail;
+        var n = newReservation.customerID;
+        var o = newReservation.phoneNumber;
 
-          $('#first_name').val(' ');
-          $('#email').val(' ');
-          $('#uniqueId').val(' ');
-          $('#phone').val(' ');
-        })
+        if (l.length > 30 || m.length > 30 || n.length > 20 || o.length > 15) {
+          alert("That's too long!");
+        } else if (l.length < 3 || m.length < 5 || n.length < 1 || o.length < 7) {
+          alert("Please enter a valid input.");
+        } else {
+          $.post('/api/tables', newReservation, function (data) {
+            if (data) {
+              alert('Booked a reservation!');
+            }
+            else {
+              alert('Sorry! You are waitlisted.');
+            }
+
+            $('#first_name').val(' ');
+            $('#email').val(' ');
+            $('#uniqueId').val(' ');
+            $('#phone').val(' ');
+          })
+        }
       });
 
     </script>
