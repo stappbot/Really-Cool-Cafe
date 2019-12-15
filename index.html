@@ -59,12 +59,13 @@
                                 <th>Phone: </th>
                             </tr>
                         </thead>
-                        <tbody>
+                        <tbody id='waitList'>
 
                         </tbody>
                     </table>
                 </div>
-
+                <a href="./" id='clear' class="btn waves-effect amber"><i
+                        class="material-icons right">free_breakfast</i>Clear Reservations</a>
             </div>
         </div>
     </div>
@@ -98,6 +99,18 @@
         }
 
         displayTables();
+
+        function clearData() {
+            alert('Clearing reservations...');
+
+            $.ajax({ url: '/api/clear', method: 'POST' })
+                .then(function () {
+                    $('#tableList').empty();
+                    $('#waitList').empty();
+                })
+        }
+
+        $('#clear').on('click', clearData);
     </script>
     <!-- <script type="text/javascript" src="js/materialize.min.js"></script> -->
 </body>

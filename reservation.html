@@ -51,23 +51,11 @@
                 <input id="email" type="email" class="validate">
                 <label class="active" for="email">Email</label>
               </div>
-              <div class="row">
-                <div class="input-field col s8 offset-s2">
-                  <input id="phone" type="text" class="validate">
-                  <label for="phone">Phone #</label>
-                </div>
-              </div>
 
               <div class="row">
                 <div class="input-field col s8 offset-s2">
                   <input id="uniqueId" type="text" class="validate">
                   <label class="active" for="uniqueId">Unique ID</label>
-                </div>
-                <div class="row">
-                  <div class="input-field col s8 offset-s2">
-                    <input id="uniqueId" type="text" class="validate">
-                    <label for="uniqueId">Unique ID</label>
-                  </div>
                 </div>
               </div>
 
@@ -105,10 +93,10 @@
 
         $.post('/api/tables', newReservation, function (data) {
           if (data) {
-            console.log('Booked a reservation!');
+            alert('Booked a reservation!');
           }
           else {
-            console.log('Sorry! You are waitlisted.');
+            alert('Sorry! You are waitlisted.');
           }
 
           $('#first_name').val(' ');

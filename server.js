@@ -46,19 +46,32 @@ app.get('/reservation', function (req, res) {
 
 //API ROUTES
 app.get('/api/tables', function (req, res) {
-    res.json();
+    res.json(tableArray);
 });
 
 app.get('/api/waitingList', function (req, res) {
-    res.json();
+    res.json(waitinglistArray);
 });
 
 //POST DATA
 app.post('/api/tables', function (req, res) {
     //console.log(req.body);
+    if (tableArray.length < 5) {
+        tableArray.push(req.body);
 
-    tableArray.push(req.body);
-    //response turns into JSON object
-    res.json(true);
-    console.log(tableArray);
+        //response into JSON object
+        res.json(true);
+        console.log(tableArray);
+    }
+    else {
+        waitinglistArray.push(req.body);
+
+        res.json(false);
+    }
+})
+
+//CLEAR DATA
+app.post('/api/clear', function (req, res) {
+    tableArray.length = 0;
+    waitinglistArray.length = 0;
 })
